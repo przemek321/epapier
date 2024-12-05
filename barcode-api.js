@@ -5,7 +5,7 @@ const JsBarcode = require('jsbarcode');
 const app = express();
 const port = 3000;
 
-app.get('/barcode.jpg', (req, res) => {
+app.get('/barcode', (req, res) => {
     // Tekst dla kodu kreskowego
   //const text = "123456fdsfsdfsd";
     const text = "12dsardsfsdfsd";
