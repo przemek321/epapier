@@ -1,0 +1,63 @@
+[  
+  {  
+    "Version": "L57",  
+    "OrderNumber": 15511544,  
+    "Material": 69663072,  
+    "Material_Description": "ANDRELON CONDIT COCONUT 250MLXLG NL",  
+    "Unit": "ZUN",  
+    "DU_Code": 69663072.00,  
+    "Current_Front_Wrap_Around_Label": 62966977.00,  
+    "New_Front_Wrap_Around_Label": null,  
+    "Current_Back_Label": 69663345.00,  
+    "New_Back_Label": null,  
+    "Current_Outer_Print_JENGA": 69663377.00,  
+    "EAN_Consumer_Unit_GTIN": 8720181325618,  
+    "ITF_Outer_Trading_Unit_GTIN": 08720181325977  
+  },  
+  {  
+    "Version": "L16",  
+    "OrderNumber": 15511542,  
+    "Material": 62715540,  
+    "Material_Description": "TRESEMME SH RICHMOISTURE 400MLX6 ES",  
+    "Unit": "ZUN",  
+    "DU_Code": 62715540.00,  
+    "Current_Front_Wrap_Around_Label": 62713478.00,  
+    "New_Front_Wrap_Around_Label": null,  
+    "Current_Back_Label": 62713512.00,  
+    "New_Back_Label": null,  
+    "Current_Outer_Print_JENGA": 62713500.00,  
+    "EAN_Consumer_Unit_GTIN": 8720181435201,  
+    "ITF_Outer_Trading_Unit_GTIN": 08720181435447  
+  },  
+  {  
+    "Version": "L16",  
+    "OrderNumber": 15511724,  
+    "Material": 69988730,  
+    "Material_Description": "DOVE LS LIQ NOUSI POUR SOM01 L23",  
+    "Unit": null,  
+    "DU_Code": null,  
+    "Current_Front_Wrap_Around_Label": null,  
+    "New_Front_Wrap_Around_Label": null,  
+    "Current_Back_Label": null,  
+    "New_Back_Label": null,  
+    "Current_Outer_Print_JENGA": null,  
+    "EAN_Consumer_Unit_GTIN": 8717163573792,  
+    "ITF_Outer_Trading_Unit_GTIN": 08717163573402  
+  },  
+  {  
+    "Version": "L16",  
+    "OrderNumber": 15511728,  
+    "Material": 69988730,  
+    "Material_Description": null,  
+    "Unit": null,  
+    "DU_Code": null,  
+    "Current_Front_Wrap_Around_Label": null,  
+    "New_Front_Wrap_Around_Label": null,  
+    "Current_Back_Label": null,  
+    "New_Back_Label": null,  
+    "Current_Outer_Print_JENGA": null,  
+    "EAN_Consumer_Unit_GTIN": 8717163573792,  
+    "ITF_Outer_Trading_Unit_GTIN": 08717163573402
+  } 
+  
+]  
