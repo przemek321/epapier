@@ -1,9 +1,14 @@
 const express = require('express');
 const { createCanvas } = require('canvas');
 const JsBarcode = require('jsbarcode');
+const fs = require('fs');  
+const path = require('path');  
 
 const app = express();
 const port = 3000;
+
+const mockDataPath = path.join(__dirname, 'mockData.json');  
+
 
 app.get('/barcode', (req, res) => {
     // Tekst dla kodu kreskowego
