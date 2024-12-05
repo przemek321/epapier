@@ -9,6 +9,18 @@ const port = 3000;
 
 const mockDataPath = path.join(__dirname, 'mockData.json');  
 
+function loadMockData() {  
+    const data = fs.readFileSync(mockDataPath);  
+    return JSON.parse(data);  
+  }  
+
+app.get('/api/data', (req, res) => {  
+    const data = loadMockData();  
+      
+    // Symulacja zapytania SELECT  
+    res.json(data);  
+  });    
+
 
 app.get('/barcode', (req, res) => {
     // Tekst dla kodu kreskowego
