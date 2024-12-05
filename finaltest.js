@@ -28,10 +28,10 @@ async function executeQuery(orderNumber) {
         const [firstRecord] = result.recordset;  
         console.log(`EAN_Consumer_Unit_GTIN: ${firstRecord.EAN_Consumer_Unit_GTIN}`);  
         console.log(`ITF_Outer_Trading_Unit_GTIN: ${firstRecord.ITF_Outer_Trading_Unit_GTIN}`);  
-        await axios.post('http://localhost:3002/generate-barcodes', {  
-            EAN_Consumer_Unit_GTIN: '8712561484398',  
-            ITF_Outer_Trading_Unit_GTIN: firstRecord.ITF_Outer_Trading_Unit_GTIN  
-        });  
+        // await axios.post('http://localhost:3002/generate-barcodes', {  
+        //     EAN_Consumer_Unit_GTIN: '8712561484398',  
+        //     ITF_Outer_Trading_Unit_GTIN: firstRecord.ITF_Outer_Trading_Unit_GTIN  
+        // });  
     } catch (err) {  
         console.error('Błąd podczas wykonywania zapytania:', err);  
     } finally {  
