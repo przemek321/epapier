@@ -3,7 +3,7 @@ const sql = require('mssql');
 
 const config = {  
     user: 'reporting.bydgoszcz',  
-    password: 'Polska01',  
+    password: '',  
     server: '156.4.10.242',  
     database: 'REPORTING-BYD',  
     options: {  
