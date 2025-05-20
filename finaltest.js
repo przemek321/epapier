@@ -9,7 +9,7 @@ const client = mqtt.connect('mqtt://localhost');
 // Konfiguracja połączenia z bazą danych  
 const config = {  
     user: 'reporting.bydgoszcz',  
-    password: 'Polska01',  
+    password: '',  
     server: '156.4.10.242',  
     database: 'REPORTING-BYD',  
     options: {  
