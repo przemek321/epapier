@@ -1,14 +1,14 @@
 const mqtt = require('mqtt');  
 const sql = require('mssql');  
-const axios = require('axios');  // Dodaj axios do wysyłania żądań HTTP    
-let ordernumerout; // Zmienna globalna do przechowywania numeru zamówienia  
+const axios = require('axios');       
+let ordernumerout;  
   
-// Konfiguracja MQTT  
+  
 const client = mqtt.connect('mqtt://localhost');  
   
-// Konfiguracja połączenia z bazą danych  
+   
 const config = {  
-    user: 'reporting.bydgoszcz',  
+    user: ' ',  
     password: '',  
     server: '156.4.10.242',  
     database: 'REPORTING-BYD',  
@@ -18,7 +18,7 @@ const config = {
     }  
 };  
   
-// Funkcja wykonująca zapytanie do bazy danych  
+   
 async function executeQuery(orderNumber) {  
     try {  
         await sql.connect(config);  
@@ -28,10 +28,7 @@ async function executeQuery(orderNumber) {
         const [firstRecord] = result.recordset;  
         console.log(`EAN_Consumer_Unit_GTIN: ${firstRecord.EAN_Consumer_Unit_GTIN}`);  
         console.log(`ITF_Outer_Trading_Unit_GTIN: ${firstRecord.ITF_Outer_Trading_Unit_GTIN}`);  
-        // await axios.post('http://localhost:3002/generate-barcodes', {  
-        //     EAN_Consumer_Unit_GTIN: '8712561484398',  
-        //     ITF_Outer_Trading_Unit_GTIN: firstRecord.ITF_Outer_Trading_Unit_GTIN  
-        // });  
+         
     } catch (err) {  
         console.error('Błąd podczas wykonywania zapytania:', err);  
     } finally {  
@@ -39,8 +36,7 @@ async function executeQuery(orderNumber) {
     }  
 }  
   
-// Obsługa wiadomości MQTT  
-client.on('message', (topic, message) => {  
+ client.on('message', (topic, message) => {  
     if (topic === 'test/topic') {  
         try {  
             const payload = JSON.parse(message.toString());  
@@ -52,7 +48,7 @@ client.on('message', (topic, message) => {
             }  
   
             ordernumerout = orderNumber;  
-            executeQuery(ordernumerout); // Poprawne przekazanie zmiennej  
+            executeQuery(ordernumerout);  
   
         } catch (err) {  
             console.error('Błąd podczas przetwarzania wiadomości:', err);  
@@ -60,8 +56,7 @@ client.on('message', (topic, message) => {
     }  
 });  
   
-// Subskrypcja tematu MQTT  
-client.subscribe('test/topic', (err) => {  
+ client.subscribe('test/topic', (err) => {  
     if (err) {  
         console.error('Błąd podczas subskrypcji:', err);  
     } else {  
@@ -69,8 +64,7 @@ client.subscribe('test/topic', (err) => {
     }  
 });  
   
-// Obsługa połączenia MQTT  
-client.on('connect', () => {  
+ client.on('connect', () => {  
     console.log('MQTT client connected');  
 });  
   
@@ -78,8 +72,7 @@ client.on('error', (err) => {
     console.error('Błąd połączenia MQTT:', err);  
 });  
   
-// Funkcja używająca numeru zamówienia po pewnym czasie  
-function useOrderNumber() {  
+ function useOrderNumber() {  
     if (ordernumerout) {  
         console.log(`Using OrderNumber: ${ordernumerout}`);  
         executeQuery(ordernumerout); // Poprawne przekazanie zmiennej  
@@ -88,8 +81,6 @@ function useOrderNumber() {
     }  
 }  
   
-// Wywołanie funkcji useOrderNumber po 5 sekundach  
-setTimeout(useOrderNumber, 5000);  
+ setTimeout(useOrderNumber, 5000);  
   
-// Przykładowe wywołanie funkcji z numerem zamówienia na początku  
-executeQuery('15465145');  
+ executeQuery('15465145');  
